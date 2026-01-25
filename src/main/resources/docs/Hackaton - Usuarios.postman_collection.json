@@ -1,0 +1,635 @@
+{
+  "info": {
+    "_postman_id": "d97f0975-b364-418d-8bd5-bd148286cf7e",
+    "name": "Hackaton - Usuarios",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "43638838",
+    "_collection_link": "https://go.postman.co/collection/43638838-d97f0975-b364-418d-8bd5-bd148286cf7e?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Serviços de Usuários",
+      "item": [
+        {
+          "name": "Login",
+          "item": [
+            {
+              "name": "Acesso",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"matricula\" : \"us0001\",\r\n  \"senha\" : \"123\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "login"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Atualizar senha",
+              "event": [
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"matricula\", \"us0001\");"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n  \"senha\":\"124\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/login/{{matricula}}/senha",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "login",
+                    "{{matricula}}",
+                    "senha"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Usuário",
+          "item": [
+            {
+              "name": "Usuário - Cadastrar",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\" : \"Thiago Teixeira\",\r\n    \"email\" : \"thiago.motta@fiapfood.com\",\r\n    \"cpf\": \"11111111111\",\r\n    \"dadosEndereco\" : {\r\n        \"cidade\" : \"Nome da cidade\",\r\n        \"cep\" : \"24455077\",\r\n        \"bairro\" : \"Nome do bairro\",\r\n        \"endereco\" : \"Descrição do endereço\",\r\n        \"estado\" : \"Rio de Janeiro\",\r\n        \"numero\": 7,\r\n        \"complemento\" : \"Complemento do endereço\",\r\n        \"semNumero\" : false\r\n    },\r\n    \"perfil\": 1,\r\n    \"dadosLogin\" : {\r\n        \"matricula\" : \"us013\",\r\n        \"senha\" : \"123\"\r\n    }\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Buscar por id",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"id\", \"d31cb9a6-c049-4e08-8b52-c2999b442c04\");"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios/{{id}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios",
+                    "{{id}}"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Buscar todos",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"pagina\", 1);"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios?pagina={{pagina}}",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios"
+                  ],
+                  "query": [
+                    {
+                      "key": "pagina",
+                      "value": "{{pagina}}"
+                    }
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Atualizar endereço",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"id\", \"100ceb8a-9b73-4e9c-ae03-853ba15d8362\");"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"cidade\" : \"Nome da cidade\",\r\n    \"cep\" : \"24455000\",\r\n    \"bairro\" : \"Nome do bairro\",\r\n    \"endereco\" : \"Descrição do endereço\",\r\n    \"estado\" : \"Rio dea Janeiro\",\r\n    \"numero\": 7,\r\n    \"complemento\" : \"Complemento do endereço\",\r\n    \"semNumero\" : false\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios/{{id}}/endereco",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios",
+                    "{{id}}",
+                    "endereco"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Atualizar perfil",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"id\", \"acc5dfbb-c2f0-40fc-8ab0-ad7840dfdb91\");"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"idPerfil\" : 2\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios/{{id}}/perfil",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios",
+                    "{{id}}",
+                    "perfil"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Atualizar nome",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"id\", \"15a0a193-e665-4900-8cf0-d1126eefae69\");"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"nome\" : \"Thiago\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios/{{id}}/nome",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios",
+                    "{{id}}",
+                    "nome"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Atualizar email",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"id\", \"20fb4a12-5877-41df-8acb-bdb898fc8130\");"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\r\n    \"email\" : \"carla.rodrigues@fiapfood.com\"\r\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios/{{id}}/email",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios",
+                    "{{id}}",
+                    "email"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Inativar",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"id\", \"54546505-5c56-4ca7-bd73-7139acec1f1a\");"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios/{{id}}/status",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios",
+                    "{{id}}",
+                    "status"
+                  ]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Usuário - Ativar",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      "pm.collectionVariables.set(\"id\", \"d31cb9a6-c049-4e08-8b52-c2999b442c04\");"
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [],
+                    "type": "text/javascript"
+                  }
+                }
+              ],
+              "request": {
+                "method": "PATCH",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/usuarios/{{id}}/status",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "usuarios",
+                    "{{id}}",
+                    "status"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "Perfil",
+          "item": [
+            {
+              "name": "Perfil - Buscar todos",
+              "event": [
+                {
+                  "listen": "prerequest",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                },
+                {
+                  "listen": "test",
+                  "script": {
+                    "exec": [
+                      ""
+                    ],
+                    "type": "text/javascript",
+                    "packages": {},
+                    "requests": {}
+                  }
+                }
+              ],
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/hackaton-usuarios/perfis",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "hackaton-usuarios",
+                    "perfis"
+                  ]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": ""
+    },
+    {
+      "key": "pagina",
+      "value": ""
+    },
+    {
+      "key": "id",
+      "value": ""
+    },
+    {
+      "key": "matricula",
+      "value": ""
+    }
+  ]
+}
