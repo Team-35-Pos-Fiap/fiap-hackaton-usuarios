@@ -8,7 +8,6 @@ RUN mvn clean install
 
 FROM eclipse-temurin:21-jre-jammy
 WORKDIR /app
-EXPOSE 8080
-COPY --from=builder /app/target/*.jar app.jar
-ENTRYPOINT ["java", "-jar", "app.jar"]
-
+EXPOSE 8087
+COPY --from=builder /app/target/*.jar hackaton-usuarios.jar
+ENTRYPOINT ["java", "-jar", "hackaton-usuarios.jar"]
