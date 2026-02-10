@@ -9,7 +9,7 @@ values (RANDOM_UUID(), 'São Gonçalo', 'Nova Cidade', 'Rio de Janeiro', 'Rua Aq
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0001', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Thiago Motta', 'thiago@fiapfood.com', '52998224725', 1, current_timestamp, null, 1,
+values ('11111111-1111-1111-1111-111111111111', 'Thiago Motta', 'thiago@fiapfood.com', '52998224725', 1, current_timestamp, null, 1,
         (SELECT id FROM endereco WHERE cidade = 'São Gonçalo'),
         (SELECT id FROM login WHERE matricula = 'us0001'));
 
@@ -20,7 +20,7 @@ values (RANDOM_UUID(), 'Rio de Janeiro', 'Copacabana', 'RJ', 'Avenida Atlântica
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0002', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Carla Rodrigues', 'carla.rodrigues@fiapfood.com', '16899535009', 1, current_timestamp, null, 2,
+values ('11111111-1111-1111-1111-111111111112', 'Carla Rodrigues', 'carla.rodrigues@fiapfood.com', '16899535009', 1, current_timestamp, null, 2,
         (SELECT id FROM endereco WHERE cidade = 'Rio de Janeiro'),
         (SELECT id FROM login WHERE matricula = 'us0002'));
 
@@ -31,7 +31,7 @@ values (RANDOM_UUID(), 'São Paulo', 'Pinheiros', 'SP', 'Rua dos Pinheiros', 134
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0003', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Rafael Santos', 'rafael.santos@fiapfood.com', '98765432100', 0, current_timestamp, current_timestamp, 1,
+values ('11111111-1111-1111-1111-111111111113', 'Rafael Santos', 'rafael.santos@fiapfood.com', '98765432100', 0, current_timestamp, current_timestamp, 1,
         (SELECT id FROM endereco WHERE cidade = 'São Paulo'),
         (SELECT id FROM login WHERE matricula = 'us0003'));
 
@@ -42,7 +42,7 @@ values (RANDOM_UUID(), 'Belo Horizonte', 'Savassi', 'MG', 'Rua Pernambuco', 1322
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0004', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Juliana Mendes', 'juliana.mendes@fiapfood.com', '74185296340', 0, current_timestamp, current_timestamp, 2,
+values ('11111111-1111-1111-1111-111111111114', 'Juliana Mendes', 'juliana.mendes@fiapfood.com', '74185296340', 0, current_timestamp, current_timestamp, 2,
         (SELECT id FROM endereco WHERE cidade = 'Belo Horizonte'),
         (SELECT id FROM login WHERE matricula = 'us0004'));
 
@@ -53,7 +53,7 @@ values (RANDOM_UUID(), 'Brasília', 'Asa Sul', 'DF', 'SQS 308', null, 'Bloco C A
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0005', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Marcelo Alves', 'marcelo.alves@fiapfood.com', '12345678909', 1, current_timestamp, null, 1,
+values ('11111111-1111-1111-1111-111111111115', 'Marcelo Alves', 'marcelo.alves@fiapfood.com', '12345678909', 1, current_timestamp, null, 1,
         (SELECT id FROM endereco WHERE cidade = 'Brasília'),
         (SELECT id FROM login WHERE matricula = 'us0005'));
 
@@ -64,7 +64,7 @@ values (RANDOM_UUID(), 'Curitiba', 'Batel', 'PR', 'Alameda Dr. Carlos de Carvalh
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0006', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Amanda Costa', 'amanda.costa@fiapfood.com', '39053344705', 1, current_timestamp, null, 1,
+values ('11111111-1111-1111-1111-111111111116', 'Amanda Costa', 'amanda.costa@fiapfood.com', '39053344705', 1, current_timestamp, null, 1,
         (SELECT id FROM endereco WHERE cidade = 'Curitiba'),
         (SELECT id FROM login WHERE matricula = 'us0006'));
 
@@ -75,7 +75,7 @@ values (RANDOM_UUID(), 'Salvador', 'Barra', 'BA', 'Avenida Oceânica', 2135, nul
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0007', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Bruno Oliveira', 'bruno.oliveira@fiapfood.com', '76251894006', 0, current_timestamp, current_timestamp, 1,
+values ('11111111-1111-1111-1111-111111111117', 'Bruno Oliveira', 'bruno.oliveira@fiapfood.com', '76251894006', 0, current_timestamp, current_timestamp, 1,
         (SELECT id FROM endereco WHERE cidade = 'Salvador'),
         (SELECT id FROM login WHERE matricula = 'us0007'));
 
@@ -86,7 +86,7 @@ values (RANDOM_UUID(), 'Recife', 'Boa Viagem', 'PE', 'Avenida Boa Viagem', 3320,
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0008', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Patricia Lima', 'patricia.lima@fiapfood.com', '95175348622', 0, current_timestamp, current_timestamp, 2,
+values ('11111111-1111-1111-1111-111111111118', 'Patricia Lima', 'patricia.lima@fiapfood.com', '95175348622', 0, current_timestamp, current_timestamp, 2,
         (SELECT id FROM endereco WHERE cidade = 'Recife'),
         (SELECT id FROM login WHERE matricula = 'us0008'));
 
@@ -97,7 +97,7 @@ values (RANDOM_UUID(), 'Fortaleza', 'Meireles', 'CE', 'Avenida Beira Mar', 850, 
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0009', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Fernando Gomes', 'fernando.gomes@fiapfood.com', '08459372030', 1, current_timestamp, null, 2,
+values ('11111111-1111-1111-1111-111111111119', 'Fernando Gomes', 'fernando.gomes@fiapfood.com', '08459372030', 1, current_timestamp, null, 2,
         (SELECT id FROM endereco WHERE cidade = 'Fortaleza'),
         (SELECT id FROM login WHERE matricula = 'us0009'));
 
@@ -108,7 +108,7 @@ values (RANDOM_UUID(), 'Porto Alegre', 'Moinhos de Vento', 'RS', 'Rua Padre Chag
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0010', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Daniela Pereira', 'daniela.pereira@fiapfood.com', '31415926501', 1, current_timestamp, null, 2,
+values ('11111111-1111-1111-1111-11111111111a', 'Daniela Pereira', 'daniela.pereira@fiapfood.com', '31415926501', 1, current_timestamp, null, 2,
         (SELECT id FROM endereco WHERE cidade = 'Porto Alegre'),
         (SELECT id FROM login WHERE matricula = 'us0010'));
 
@@ -119,7 +119,7 @@ values (RANDOM_UUID(), 'Manaus', 'Adrianópolis', 'AM', 'Avenida André Araújo'
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0011', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Ricardo Souza', 'ricardo.souza@fiapfood.com', '60598732144', 0, current_timestamp, current_timestamp, 2,
+values ('11111111-1111-1111-1111-11111111111b', 'Ricardo Souza', 'ricardo.souza@fiapfood.com', '60598732144', 0, current_timestamp, current_timestamp, 2,
         (SELECT id FROM endereco WHERE cidade = 'Manaus'),
         (SELECT id FROM login WHERE matricula = 'us0011'));
 
@@ -130,6 +130,6 @@ values (RANDOM_UUID(), 'Florianópolis', 'Jurerê Internacional', 'SC', 'Avenida
 insert into login (id, matricula, senha) values (RANDOM_UUID(), 'us0012', '123');
 
 insert into usuario (id, nome, email, cpf, ativo, data_criacao, data_atualizacao, id_perfil, id_endereco, id_login)
-values (RANDOM_UUID(), 'Luciana Ferreira', 'luciana.ferreira@fiapfood.com', '47030291855', 0, current_timestamp, current_timestamp, 2,
+values ('11111111-1111-1111-1111-11111111111c', 'Luciana Ferreira', 'luciana.ferreira@fiapfood.com', '47030291855', 0, current_timestamp, current_timestamp, 2,
         (SELECT id FROM endereco WHERE cidade = 'Florianópolis'),
         (SELECT id FROM login WHERE matricula = 'us0012'));
