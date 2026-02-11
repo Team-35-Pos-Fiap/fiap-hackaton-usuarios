@@ -27,6 +27,7 @@ spring:
 server:
   servlet:
     context-path: /hackaton-usuarios
+  port: 0
 
 eureka:
   client:
